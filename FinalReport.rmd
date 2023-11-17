@@ -76,7 +76,6 @@ the number in those affected with aids is higher among those who got the placebo
 
 ```{r}
 chisq.test(table2)
-chisqtestGC(table2)
 ```
 
 # Discussion and Conclusion
