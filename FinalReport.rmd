@@ -75,9 +75,21 @@ the number in those affected with aids is higher among those who got the placebo
 <!--State hypothesis clearly.  Make sure your discussion of the inferential test covers all the aspects that the test output produces, such as test statistic, p-value etc.  Make a decision about the null hypothesis, explain the assumptions on which the selected test/procedure was based, and why the chosen procedure satisfys the assumptions and is appropriate to answer the research question!-->
 
 ```{r}
-chisq.test(table2)
+chisq.test(table1)
+chisqtestGC(table1)
 ```
+p-value is .0000001242 therfore we reject the null hypothesis.
+
+
+```{r}
+druggies$infected=factor(druggies$infected,c('none', 'aids'))
+fisher.test(druggies$treatment,druggies$infected)
+```
+
+p-value is .0000000423.  The vaccine is highly effective, odds ratio is 2.8:1 you are almost three times more likely to be protected from getting aids if you get the vaccine rather than a placebo.
 
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
+
+is the vaccine effective in preventing aids? we did a chisq test resulting in a p value less than .05. Therefore we reject the null hypothesis.  The vaccine is effective in preventing aids.  If you take the vaccine you are 2.8x more likely to not get aids than someone who did not take the vaccine.
